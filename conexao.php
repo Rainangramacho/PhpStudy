@@ -1,27 +1,10 @@
 <?php
-  
-class Conexao
-{
-   private static $connection;
-  
-   private function __construct(){}
-  
-   public static function getConnection() {
-  
-       $pdoConfig  = DB_DRIVER . ":". "Server=" . DB_HOST . ";";
-       $pdoConfig .= "Database=".DB_NAME.";";
-       
-       try {
-           if(!isset($connection)){
-               $connection =  new PDO($pdoConfig, DB_USER, DB_PASSWORD);
-               $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-           }
-           return $connection;
-       } catch (PDOException $e) {
-           $mensagem = "Drivers disponiveis: " . implode(",", PDO::getAvailableDrivers());
-           $mensagem .= "\nErro: " . $e->getMessage();
-           echo  phpinfo();
-           throw new Exception($mensagem);
-       }
+
+$serverName = "DESKTOP-AC2140U";
+   $connectionInfo = array( "Database"=>"teste", "UID"=>"sa", "PWD"=>"rainanbgs");
+   $conn = sqlsrv_connect( $serverName, $connectionInfo );
+   if( $conn === false ) {
+      die( print_r( sqlsrv_errors(), true));
    }
-}
+
+?>
