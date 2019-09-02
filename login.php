@@ -32,7 +32,9 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
                             </div>
                             <div class="form-group">
                                 <label for="remember-me" class="text-info"><span>Remember me</span> <input id="remember-me" name="remember-me" type="checkbox"></label><br>
-                                <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="Logar">
+                               
+
                                 
                             </div>
                             <?php
@@ -46,7 +48,11 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
                             <div id="register-link" class="text-right">
                                 <a href="cadastro.php" class="text-info">Não tem conta? Cadastre-se!</a>
                             </div>
+                            
                         </form>
+                        
+                        <br>
+                        
                     </div>
                 </div>
             </div>
